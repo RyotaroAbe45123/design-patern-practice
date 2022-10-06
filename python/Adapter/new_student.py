@@ -1,0 +1,2 @@
+class NewStudent:
+    pass
