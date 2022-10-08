@@ -1,4 +1,4 @@
-# design-patern-practice
+# design-patterns-practice
 ## デザインパターンの勉強用
 javaやpythonで実装
 
