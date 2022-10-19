@@ -4,9 +4,10 @@ from .product import Product
 
 
 class Factory(ABC):
-    def create(self, product_name: str):
+    def create(self, product_name: str) -> Product:
         product = self.create_product(product_name)
         self.register_product(product)
+        return product
 
     @abstractmethod
     def create_product(self, product_name: str) -> Product:
