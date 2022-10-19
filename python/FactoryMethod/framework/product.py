@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Product(metaclass=ABC):
+class Product(ABC):
     def print(self) -> None:
         print("-----")
         for i in range(5):

@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-from product import Product
+from .product import Product
 
 
-class Factory(metaclass=ABC):
+class Factory(ABC):
     def create(self):
         product = self.create_product()
         self.register_product(product)
