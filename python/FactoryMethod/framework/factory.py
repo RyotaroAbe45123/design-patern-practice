@@ -15,3 +15,6 @@ class Factory(ABC):
     @abstractmethod
     def register_product(self, product: Product) -> None:
         pass
+
+    def __private(self):
+        print("private function.")
