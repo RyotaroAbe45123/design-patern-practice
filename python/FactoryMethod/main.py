@@ -1,11 +1,13 @@
+from framework.factory import Factory
+from framework.product import Product
 from concrete.concrete_factory import ConcreteFactory
 
 
 def main():
-    factory = ConcreteFactory()
-    hoge = factory.create("hoge")
+    factory: Factory = ConcreteFactory()
+    hoge: Product = factory.create("hoge")
     hoge.print()
-    fuga = factory.create("fuga")
+    fuga: Product = factory.create("fuga")
     fuga.print()
     # print(dir(factory))
     # factory.__private()
