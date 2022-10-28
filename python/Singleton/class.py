@@ -3,12 +3,17 @@
 class A:
     pass
 print(type(A))
+print(dir(object))
+print(object.__class__)
+print(type(object))
+print('------------------')
 
 # python source code
 # https://github.com/python/cpython/blob/3.10/Lib/abc.py
 
 class B(object):
     def __new__(self, *args, **kwargs):
+        print("new")
         if not hasattr(self, "__instance"):
             self.__instance = super().__new__(self)
         return self.__instance
@@ -17,6 +22,55 @@ class B(object):
         print('init')
         self.v = v
         super().__init__()
+
+class C:
+    def __new__(self, *args, **kwargs):
+        print("new")
+        return object
+
+class D(C):
+    def __new__(self):
+        print("new")
+        return object
+    def __init__(self) -> None:
+        print("init")
+        # super().__init__()
+
+class E:
+    def __new__(self, *args, **kwargs):
+        print("new")
+        instance = super().__new__(self)
+        print(instance)
+        print(type(instance))
+        # return None
+        # return instance
+        b = B(1)
+        return b
+
+    # def __init__(self) -> None:
+    def __init__(self, *args, **kwargs):
+        print("init")
+        # super().__init__()
+
+print(C)
+print(type(C))
+c = C(1, {"a": 1})
+print(c)
+print('------------------')
+
+print(D)
+print(type(D))
+d = D()
+# d = D(1, {"a": 1})
+print(d)
+print('------------------')
+
+print(E)
+print(type(E))
+e = E(1, {"a": 1})
+print(e)
+print('------------------==')
+
 
 print(B)
 b = B(1)
