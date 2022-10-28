@@ -7,5 +7,5 @@ class Base(object):
 
 class Singleton(Base):
     def __init__(self, value: int):
+        self._value = value
         self.__value = value
-        print(self.__value)
