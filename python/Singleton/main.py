@@ -3,12 +3,21 @@ from singleton import Singleton
 
 def main() -> None:
     a = Singleton(value=1)
-    print(f"a: {a.__value}")
+    try:
+        print(f"a, _value: {a._value}")
+        print(f"a, __value: {a.__value}")
+    except AttributeError as e:
+        print(f"a, dir: {dir(a)}")
 
     b = Singleton(value=2)
-    print(f"a: {a.__value}")
-    print(f"b: {b.__value}")
-
+    try:
+        print(f"a, _value: {a._value}")
+        print(f"a, __value: {a.__value}")
+        print(f"b, _value: {b._value}")
+        print(f"b, __value: {b.__value}")
+    except AttributeError as e:
+        print(f"a, dir: {dir(a)}")
+        print(f"b, dir: {dir(b)}")
 
 if __name__ == "__main__":
     main()
