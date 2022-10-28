@@ -2,6 +2,12 @@ from singleton import Singleton
 
 
 def main() -> None:
+    a = Singleton()
+    print(a)
+    b = Singleton()
+    print(b)
+
+    return None
     a = Singleton(value=1)
     try:
         print(f"a, _value: {a._value}")
