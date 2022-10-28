@@ -1,11 +1,32 @@
 # https://qiita.com/TrashBoxx/items/7a76e46122191529c526
 # classは実はtypeのインスタンスらしい！
+from abc import ABCMeta, abstractmethod
+
+
 class A:
     pass
 print(type(A))
 print(dir(object))
 print(object.__class__)
 print(type(object))
+print('------------------')
+
+class ABS(metaclass=ABCMeta):
+    # https://ohke.hateblo.jp/entry/2020/02/01/123000
+    # ABCMetaが__new__で自身と親の抽象メソッドの実装をチェックしているらしい
+    # ↓のように__new__をオーバーライドすると怒られない！！w
+    def __new__(self, *args, **kwargs):
+        pass
+
+    @abstractmethod
+    def method(self):
+        pass
+class Sub(ABS):
+    pass
+
+abs = Sub()
+print(Sub)
+print(abs)
 print('------------------')
 
 # python source code
