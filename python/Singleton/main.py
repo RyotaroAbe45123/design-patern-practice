@@ -2,9 +2,9 @@ from singleton import Singleton
 
 
 def main() -> None:
-    a = Singleton()
+    a = Singleton.get_instance()
     print(a)
-    b = Singleton()
+    b = Singleton.get_instance()
     print(b)
 
     return None

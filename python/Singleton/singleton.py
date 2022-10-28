@@ -16,4 +16,12 @@ class Singleton:
     def __new__(self, *args, **kwargs):
         if Singleton.__instance is None:
             Singleton.__instance = super().__new__(self)
+        else:
+            raise Exception("Use get_instance method.")
+        return Singleton.__instance
+
+    @staticmethod
+    def get_instance():
+        if Singleton.__instance is None:
+            Singleton()
         return Singleton.__instance
