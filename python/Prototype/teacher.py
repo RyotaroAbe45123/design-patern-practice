@@ -16,7 +16,6 @@ class Teacher:
         prototype: Cloneable = self.__showcase.get(name)
         assert prototype is not None, "Not Found this name prototype. So register it."
 
-        # prototype: Cloneable = Paper("crystal")
         self.draw_crystal(prototype)
         self.cut_accordance_with_line(prototype)
 
