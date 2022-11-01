@@ -1,5 +1,6 @@
 from teacher import Teacher
 from prototype.paper import Paper
+from prototype.book import Book
 
 
 def main():
@@ -14,6 +15,17 @@ def main():
     print(papers[0])
     print(papers[1])
     print(papers[2])
+
+
+    book = Book()
+
+    teacher.register("book", book)
+
+    books = teacher.create_many_crystals("book")
+    print(len(books))
+    print(books[0])
+    print(books[1])
+    print(books[2])
 
 
 if __name__ == "__main__":
