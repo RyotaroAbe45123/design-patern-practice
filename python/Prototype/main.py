@@ -9,7 +9,9 @@ def main():
 
     teacher.register("paper", paper)
 
-    teacher.create_many_crystals("paper")
+    papers = teacher.create_many_crystals("paper")
+    print(papers[0])
+    print(papers[1])
 
 
 if __name__ == "__main__":

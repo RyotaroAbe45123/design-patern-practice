@@ -1,4 +1,5 @@
 from typing import List
+from time import sleep
 
 from prototype.paper import Paper
 from cloneable import Cloneable
@@ -24,7 +25,11 @@ class Teacher:
         return papers
 
     def draw_crystal(self, prototype: Cloneable):
-        pass
+        print(f"{prototype}: drawing started.")
+        sleep(5)
+        print(f"{prototype}: drawing finished.")
 
     def cut_accordance_with_line(self, prototype: Cloneable):
-        pass
+        print(f"{prototype}: cutting started.")
+        sleep(5)
+        print(f"{prototype}: cutting finished.")
