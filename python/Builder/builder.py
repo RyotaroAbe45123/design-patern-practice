@@ -14,5 +14,5 @@ class Builder(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def get_concentration(self):
+    def get_concentration(self) -> float:
         raise NotImplementedError
