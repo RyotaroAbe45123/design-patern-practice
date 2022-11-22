@@ -10,6 +10,7 @@ from hot_pot.ingredient import Ingredient
 class Factory(metaclass=ABCMeta):
     @staticmethod
     def get_factory(factory_name: str) -> None:
+        # グローバルにインポートすると循環参照になるので、関数内でインポート
         from mizutaki.mizutaki_factory import MizutakiFactory
         if factory_name == "MizutakiFactory":
             pass
