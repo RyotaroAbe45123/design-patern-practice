@@ -1,2 +1,0 @@
-class Pot:
-    pass
