@@ -11,6 +11,10 @@ class Factory(metaclass=ABCMeta):
     @staticmethod
     def get_factory(factory_name: str) -> None:
         from mizutaki.mizutaki_factory import MizutakiFactory
+        if factory_name == "MizutakiFactory":
+            pass
+        else:
+            raise Exception
         return eval(factory_name)()
 
     @abstractmethod
