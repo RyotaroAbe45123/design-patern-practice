@@ -3,5 +3,5 @@ from abc import ABCMeta, abstractmethod
 
 class Protain(metaclass=ABCMeta):
     @abstractmethod
-    def get_protain(self):
+    def __init__(self) -> None:
         pass
