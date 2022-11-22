@@ -2,4 +2,5 @@ from hot_pot.vegetable import Vegetable
 
 
 class ChineseCabbage(Vegetable):
-    pass
+    def __init__(self) -> None:
+        pass
