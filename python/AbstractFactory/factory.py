@@ -8,6 +8,11 @@ from hot_pot.ingredient import Ingredient
 
 
 class Factory(metaclass=ABCMeta):
+    @staticmethod
+    def get_factory(factory_name: str) -> None:
+        from mizutaki.mizutaki_factory import MizutakiFactory
+        return eval(factory_name)()
+
     @abstractmethod
     def get_soup(self) -> Soup:
         pass
